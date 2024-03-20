@@ -10,19 +10,31 @@ from datetime import datetime
 
 class BaseModel:
 
+    '''
 
-    '''Creating a public attribute of Basemodel'''
-    def __init__(self, *args, **kargs)
+    Creating a public attribute of Basemodel
+
+    Attributes:
+        id: assign with an uuid when an instance is created
+        created_at: assign with the current datetime when an instance is created
+        updated_at: assign with the current datetime when an instance is created and updated
+
+    '''
+    def __init__(self)
 
         self.id = str(uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
 
-        if len(kwargs) != 0:
-            for k, v in kwargs.items():
-                if k == "created_at" or k == "updated_at":
-                    self.__dict__[k] = datetime.strptime(v, tform)
-                else:
-                    self.__dict__[k] = v
-        else:
-            models.storage.new(self)
+    '''Public instance attributes'''
+    def __str__(self):
+
+        '''Output [<class name>] (<self.id>) <self.__dict__>'''
+        return ("[{}] ({}) {}". format(self.__class__.__name__, self.id, self.__dict__.))
+
+
+    """creating the public instances"""
+    def save(self):
+
+        """updates the public instance attribute"""
+
