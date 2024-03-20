@@ -5,7 +5,6 @@ Creating a basemodel
 not expecting this to be fun at all
 '''
 
-import models
 from uuid import uuid4
 from datetime import datetime
 
@@ -27,7 +26,6 @@ class BaseModel:
         self.id = str(uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
-        models.storage.new(self)
     else:
         for key, value in kwargs.items():
             if key != "__class__":
@@ -47,7 +45,6 @@ class BaseModel:
 
         """updates the public instance attribute updated_at"""
         self.updated_at = datetime.now()
-        models.storage.save()
 
 
     """creating a to_dict(self)"""
