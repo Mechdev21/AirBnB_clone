@@ -8,6 +8,7 @@ not expecting this to be fun at all
 from uuid import uuid4
 from datetime import datetime
 
+
 class BaseModel:
 
     '''
