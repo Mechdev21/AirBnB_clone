@@ -11,7 +11,6 @@ from datetime import datetime
 class BaseModel:
 
     '''
-
     Creating a public attribute of Basemodel
 
     Attributes:
@@ -36,5 +35,15 @@ class BaseModel:
     """creating the public instances"""
     def save(self):
 
-        """updates the public instance attribute"""
+        """updates the public instance attribute updated_at"""
+        self.updated_at = datetime.now()
 
+    """creating a to_dict(self)"""
+    def to_dict(self):
+
+        instance_dict = {}
+        intance_dict = update(self.__dict__)
+        instance_dict["created_at"] = instance_dict["created_at"].isoformat()
+        instance_dict["updated_at"] = instance_dict["updated_at"].isoformat()
+        instance_dict["__class__"] = self.__class__.__name__
+        return instance_dict
