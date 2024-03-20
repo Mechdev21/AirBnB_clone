@@ -23,10 +23,18 @@ class BaseModel:
     def __init__(self, *args, **kwargs):
 
         """Initializing public instances attibutes"""
-        if kwargs =! NULL
+    if len(kwargs) == 0:
         self.id = str(uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
+        models.storage.new(self)
+    
+    else:
+        for key, value in kwargs.items():
+            if key != "__class__":
+                if key == "created_at" or key == "updated_at":
+                    value = datetime.fromisoformat(value)
+                setattr(self, key, value)
 
     '''Public instance attributes'''
     def __str__(self):
@@ -40,6 +48,7 @@ class BaseModel:
 
         """updates the public instance attribute updated_at"""
         self.updated_at = datetime.now()
+        models.storage.save()
 
 
     """creating a to_dict(self)"""
