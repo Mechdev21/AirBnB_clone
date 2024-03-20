@@ -19,15 +19,14 @@ class BaseModel:
         created_at: assign with the current datetime when an instance is created
         updated_at: assign with the current datetime when an instance is created and updated
 
-    '''
+    '''       
     def __init__(self, *args, **kwargs):
+        
+        """Initializing public instances attributes"""
 
-        """Initializing public instances attibutes"""            
-                
     if kwargs:
         for key, value in kwargs.items():
             if key != '__class__':
-                   
                 if key in ('created_at', 'updated_at'):
                     value = datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f')
                 setattr(self, key, value)
