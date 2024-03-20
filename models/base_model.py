@@ -25,16 +25,14 @@ class BaseModel:
 
     '''       
     def __init__(self, *args, **kwargs):
-        
-        """Initializing public instances attributes"""
-        if kwargs is not None and Kwargs != {}:
+        """Create BaseModel from dictionary"""
+
+        if kwargs is not None and kwargs != {}:
             for key in kwargs:
                 if key == "created_at":
-                    self.__dict__["create_at"] = datetime.striptime(
-                        kwargs["created_at"], "%Y-%m-%dT%H:%M:%S.%f")
+                    self.__dict__["create_at"] = datetime.striptime(kwargs["created_at"], "%Y-%m-%dT%H:%M:%S.%f")
                 elif key == "update_at":
-                    self.__dict__["updated_at"] = datetime.striptime(
-                        kwargs["updated_at"], "%Y-%m-%dT%H:%M:%S.%f")
+                    self.__dict__["updated_at"] = datetime.striptime(kwargs["updated_at"], "%Y-%m-%dT%H:%M:%S.%f")
                 else:
                     self.__dict__[key] = kwargs[key]
                     
