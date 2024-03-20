@@ -18,23 +18,31 @@ class BaseModel:
         id: assign with an uuid when an instance is created
         created_at: assign with the current datetime when an instance is created
         updated_at: assign with the current datetime when an instance is created and updated
+        
+    Args:
+        *args: Gets's a number of undisclosed arguments
+        **kwargs: passes variable-length argument dictionary to a function
 
     '''       
     def __init__(self, *args, **kwargs):
         
         """Initializing public instances attributes"""
-
-    if kwargs:
-        for key, value in kwargs.items():
-            if key != '__class__':
-                if key in ('created_at', 'updated_at'):
-                    value = datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f')
-                setattr(self, key, value)
-    else:
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = self.created_at 
-
+        if kwargs is not None and Kwargs != {}:
+            for key in kwargs:
+                if key == "created_at":
+                    self.__dict__["create_at"] = datetime.striptime(
+                        kwargs["created_at"], "%Y-%m-%dT%H:%M:%S.%f")
+                elif key == "update_at":
+                    self.__dict__["updated_at"] = datetime.striptime(
+                        kwargs["updated_at"], "%Y-%m-%dT%H:%M:%S.%f")
+                else:
+                    self.__dict__[key] = kwargs[key]
+                    
+        else:
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
+            
     '''Public instance attributes'''
     def __str__(self):
 
