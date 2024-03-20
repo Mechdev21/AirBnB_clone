@@ -5,6 +5,7 @@ Creating a basemodel
 not expecting this to be fun at all
 '''
 
+import models
 from uuid import uuid4
 from datetime import datetime
 
@@ -19,8 +20,10 @@ class BaseModel:
         updated_at: assign with the current datetime when an instance is created and updated
 
     '''
-    def __init__(self)
+    def __init__(self, *args, **kwargs):
 
+        """Initializing public instances attibutes"""
+        if kwargs =! NULL
         self.id = str(uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
@@ -29,7 +32,7 @@ class BaseModel:
     def __str__(self):
 
         '''Output [<class name>] (<self.id>) <self.__dict__>'''
-        return ("[{}] ({}) {}". format(self.__class__.__name__, self.id, self.__dict__.))
+        return ("[{}] ({}) {}". format(self.__class__.__name__, self.id, self.__dict__))
 
 
     """creating the public instances"""
@@ -38,11 +41,17 @@ class BaseModel:
         """updates the public instance attribute updated_at"""
         self.updated_at = datetime.now()
 
+
     """creating a to_dict(self)"""
     def to_dict(self):
 
+        """
+        Returns a dictionary conatining all keys/values
+        of dict instance
+        """
+
         instance_dict = {}
-        intance_dict = update(self.__dict__)
+        instance_dict.update(self.__dict__)
         instance_dict["created_at"] = instance_dict["created_at"].isoformat()
         instance_dict["updated_at"] = instance_dict["updated_at"].isoformat()
         instance_dict["__class__"] = self.__class__.__name__
