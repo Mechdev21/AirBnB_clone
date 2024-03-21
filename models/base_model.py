@@ -16,14 +16,16 @@ class BaseModel:
 
     Attributes:
         id: assign with an uuid when an instance is created
-        created_at: assign with the current datetime when an 
+        created_at: assign with the current datetime when an
         instance is created
-        updated_at: assign with the current datetime when an 
+        updated_at: assign with the current datetime when an
         instance is created and updated
     Args:
         *args: Gets's a number of undisclosed arguments
-        **kwargs: passes variable-length argument dictionary to a function
-    '''       
+        **kwargs: passes variable-length argument
+        dictionary to a function
+    '''
+
     def __init__(self, *args, **kwargs):
         """Create BaseModel from dictionary"""
 
@@ -41,7 +43,7 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
-              
+
     '''Public instance attributes'''
     def __str__(self):
 
@@ -49,13 +51,11 @@ class BaseModel:
         return ("[{}] ({}) {}". format(
             self.__class__.__name__, self.id, self.__dict__))
 
-
     """creating the public instances"""
     def save(self):
 
         """updates the public instance attribute updated_at"""
         self.updated_at = datetime.now()
-
 
     """creating a to_dict(self)"""
     def to_dict(self):
