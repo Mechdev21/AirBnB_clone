@@ -7,6 +7,7 @@ not expecting this to be fun at all
 
 import uuid
 from datetime import datetime
+import models
 
 
 class BaseModel:
@@ -27,20 +28,18 @@ class BaseModel:
     def __init__(self, *args, **kwargs):
         """Create BaseModel from dictionary"""
 
-        if kwargs is not None and kwargs != {}:
-            for key in kwargs:
-                if key == "created_at":
-                    self.__dict__["create_at"] = datetime.striptime(
-                        kwargs["created_at"], "%Y-%m-%dT%H:%M:%S.%f")
-                elif key == "update_at":
-                    self.__dict__["updated_at"] = datetime.striptime(
-                        kwargs["updated_at"], "%Y-%m-%dT%H:%M:%S.%f")
-                else:
-                    self.__dict__[key] = kwargs[key]
+        if kwargs:
+            for key, value in kwargs.items():
+                if key == "created_at" or key == "updated_at":
+                    value = datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f')
+                if key == "__class__":
+                    continue
+                setattr(self, key, value)
         else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+            models.storage.new(self)
               
     '''Public instance attributes'''
     def __str__(self):
@@ -55,6 +54,7 @@ class BaseModel:
 
         """updates the public instance attribute updated_at"""
         self.updated_at = datetime.now()
+        models.storage.save()
 
 
     """creating a to_dict(self)"""
