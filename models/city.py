@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from models.base_models.py import BaseModel
+from models.base_model import BaseModel
 """
 This modue imports from BaseModel
 """
