@@ -42,7 +42,7 @@ class BaseModel:
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
             models.storage.new(self)
-              
+
     '''Public instance attributes'''
     def __str__(self):
 
