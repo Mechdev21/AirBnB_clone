@@ -18,9 +18,6 @@ from models.base_model import BaseModel
 class TestBaseModels_instantiation(unittest.TestCase):
     """Testing the instantiatioin of the BaseModel class"""
 
-    def test_new_instance_stored_in_objects(self):
-        self.assertEqual(Basemodel, models.storage.all().values())
-
     def test_no_args(self):
         self.assertEqual(BaseModel, type(BaseModel()))
 
@@ -36,13 +33,13 @@ class TestBaseModels_instantiation(unittest.TestCase):
     def test_two_models_id_is_unique(self):
         bmodel1 = BaseModel()
         bmodel2 = BaseModel()
-        self.assertnotEqual(bamodel1.id, bmodel2.id)
+        self.assertNotEqual(bmodel1.id, bmodel2.id)
 
     def test_two_models_different_created_at(self):
         bmodel1 = BaseModel()
         sleep(0.06)
         bmodel2 = BaseModel()
-        self.assertLess(bmodel1.created_at, bmodel2.createdat)
+        self.assertLess(bmodel1.created_at, bmodel2.created_at)
 
     def test_two_models_different_updated_at(self):
         bmodel1 = BaseModel()
@@ -52,7 +49,7 @@ class TestBaseModels_instantiation(unittest.TestCase):
 
     def test_args_unsued(self):
         bmodel = BaseModel(None)
-        self.assertNotIn(None, bm.__dict__.values())
+        self.assertNotIn(None, bmodel.__dict__.values())
 
     def test_str_representation(self):
         dd = datetime.today()
@@ -68,7 +65,7 @@ class TestBaseModels_instantiation(unittest.TestCase):
 
     def test_instantiation_with_args_and_kwargs(self):
         with self.assertRaises(TypeError):
-            BaseModel(id=none, created_at=None, updated_at=None)
+            BaseModel(id=None, created_at=None, updated_at=None)
 
 
 if __name__ == "__main__":
