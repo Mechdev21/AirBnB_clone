@@ -10,8 +10,8 @@ Model
 
 class Amenity(BaseModel):
     """Public class attribute"""
-    def __init__(self, name=""):
+    def __init__(self, name="", *args, **kwargs):
 
         """calling BaseModel"""
-        super().__init__()
+        super().__init__(*args, *kwargs)
         self.name = name
