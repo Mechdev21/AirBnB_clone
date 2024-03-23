@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """Begining of the console"""
 
 import cmd
@@ -9,10 +10,13 @@ from models import storage
 
 
 class HBNBCommand(cmd.Cmd):
-    """ custom console class"""
+    """
+    This is a custom console class
+    """
     prompt = "(hbnb)"
 
     def do_create(self, line):
+
         """Creates a new instance of a model"""
         classes = {"BaseModel": BaseModel, "User": User}
         args = shlex.split(line)
