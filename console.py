@@ -14,7 +14,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, line):
         """Creates a new instance of a model"""
-        classes = {"BaseModel":BaseModel, "User": User}
+        classes = {"BaseModel": BaseModel, "User": User}
         args = shlex.split(line)
         if len(args) == 0:
             print("** class name missing **")
@@ -27,7 +27,6 @@ class HBNBCommand(cmd.Cmd):
         except Exception as e:
             print(f"Error creating object: {str(e)}")
 
-
     def do_quit(self, line):
         """EXIT the cmdloop"""
         return True
@@ -35,10 +34,10 @@ class HBNBCommand(cmd.Cmd):
     def do_EOF(self, line):
         """exit upn keyboard interrupt"""
         return True
+
     def emptyline(self):
         """does nothing upon encontering a blank line"""
         return False
-
 
 
 if __name__ == '__main__':
