@@ -9,11 +9,13 @@ class review inheriting from BaseModel
 class Review(BaseModel):
 
     """creating public class attribute
+    
     Attributes:
         place_id: empty string
         user_id: empty string
         text: empty string
     """
+    
     place_id = ""
     usser_id = ""
     text = ""
