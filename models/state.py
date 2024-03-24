@@ -13,4 +13,4 @@ class State(BaseModel):
         """calling the parent class"""
 
         super().__init__()
-        self.name = name
+        self.name = str(name)
