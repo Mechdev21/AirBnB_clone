@@ -9,9 +9,10 @@ Model
 
 
 class Amenity(BaseModel):
-    """Public class attribute"""
-    def __init__(self, name="", *args, **kwargs):
-
-        """calling BaseModel"""
-        super().__init__(*args, *kwargs)
-        self.name = name
+    
+    """Public class attribute
+    Attribute:
+        name: has an empty string
+    
+    """
+    name = ""
