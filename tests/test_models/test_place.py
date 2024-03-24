@@ -17,7 +17,8 @@ class Test_Place(unittest.TestCase):
     
     instead of repeating it in the code
     """
-
+    
+    
     def empty_string_city_id(self):
 
         obj = Place()
