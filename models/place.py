@@ -28,4 +28,4 @@ class Place(BaseModel):
         self.price_by_night = price_by_night
         self.latitude = latitude
         self.longitude = longitude
-        self.amenity_ids = amenity_id
+        self.amenity_ids = amenity_ids
