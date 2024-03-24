@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 
-'''
-Creating a basemodel
-not expecting this to be fun at all
-'''
-
 import uuid
 from datetime import datetime
 import models
+
+"""
+This is the beginginof the class baseModel
+"""
 
 
 class BaseModel:
@@ -60,10 +59,8 @@ class BaseModel:
     """creating a to_dict(self)"""
     def to_dict(self):
 
-        """
-        Returns a dictionary conatining all keys/values
-        of dict instance
-        """
+        """Returns a dictionary conatining all keys/values
+        of dict instance"""
 
         instance_dict = {}
         instance_dict.update(self.__dict__)
