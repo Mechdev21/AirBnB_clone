@@ -32,7 +32,7 @@ class FileStorage:
     def save(self):
         """serializes an object into a json file"""
         dict_dict = {k: v.to_dict() for k, v in self.__objects.items()}
-        with open(self.__file_path, 'w', encoding= 'utf-8') as f:
+        with open(self.__file_path, 'w', encoding='utf-8') as f:
             json.dump(dict_dict, f)
 
     def reload(self):
@@ -51,4 +51,3 @@ class FileStorage:
                             self.new(obj)
             except Exception:
                 pass
-
