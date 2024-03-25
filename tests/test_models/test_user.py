@@ -7,7 +7,18 @@ from models.user import User
 
 class TestUser(unittest.TestCase):
     """test cases to consider"""
-    pass
-
-if __name__ == "__main__":
-    unittest.main()
+    
+    def setUp(self):
+        obj = User()
+        
+    def test_email(self):
+        self.assertEqual(obj.email, "")
+        
+    def test_password(self):
+        self.assertEqual(obj.password, "")
+        
+    def test_first_name(self):
+        self.assertEqual(obj.first_name, "")
+        
+    def test_last_name(self):
+        seslf.assertEqual(obj.last_name, "")
