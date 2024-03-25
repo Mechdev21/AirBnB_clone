@@ -35,16 +35,27 @@ class FileStorage:
             json.dump(dict_dict, f)
 
     def reload(self):
-        """desrialise a json file and converts it into an instance"""
+        """Deserialize a JSON file and convert it into instances"""
         try:
             with open(self.__file_path, 'r') as f:
                 instance_dict = json.load(f)
-        except (FileNotFoundError, json.JSONDecodeError) as e:
-            print("File not found {}".format(e))
-            return
+        except FileNotFoundError:
+            pass
+        except json.JSONDecodeError as e:
+            print("Error decoding JSON: {}".format(e))
+            return None
+
         for data in instance_dict.values():
             class_key = data.get('__class__')
             if class_key:
-                class_name = globals()[class_key]
+                class_name = globals().get(class_key)
                 if class_name:
-                    self.new(class_name(**data))
+                    try:
+                        obj = class_name(**data)
+                        self.new(obj)
+                    except Exception as e:
+                        print("Error creating instance: {}".format(e))
+                        return None
+
+        return self.reload
+
