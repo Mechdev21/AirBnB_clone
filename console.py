@@ -100,53 +100,6 @@ class HBNBCommand(cmd.Cmd):
                              if v.__class__.__name__ == args[0]]
             print(instances)
 
-    def do_update(self, line):
-        """Updates an instance based on the class name"""
-        classes = {"BaseModel": BaseModel, "User": User, "State": State,
-                   "City": City, "Amenity": Amenity, "Place": Place,
-                   "Review": Review}
-        args = shlex.split(line)
-
-        if len(args) < 4:
-            return
-
-        class_name = args[0]
-
-        if class_name not in classes:
-            print("** Class doesn't exist **")
-            return
-
-        if len(args) < 4:
-            print("** Missing arguments **")
-            return
-
-        instance_id = args[1]
-        storage_key = f"{class_name}.{instance_id}"
-        all_instances = storage.all()
-
-        if storage_key not in all_instances:
-            print("** No instance found with provided ID **")
-            return
-
-        instance = all_instances[storage_key]
-        attr_k = args[2]
-        attr_v = args[3]
-
-        try:
-            if attr_v.isdigit():
-                attr_v = int(attr_v)
-            else:
-                attr_v = float(attr_v)
-        except ValueError:
-            pass
-
-        if hasattr(instance, attr_k):
-            setattr(instance, attr_k, attr_v)
-            storage.save()
-            print("Instance updated successfully")
-        else:
-            print("** Attribute name not found **")
-
     def do_quit(self, line):
         """EXIT the cmdloop"""
         return True
