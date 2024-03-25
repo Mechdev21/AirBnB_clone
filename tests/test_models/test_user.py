@@ -21,4 +21,4 @@ class TestUser(unittest.TestCase):
         self.assertEqual(obj.first_name, "")
         
     def test_last_name(self):
-        seslf.assertEqual(obj.last_name, "")
+        self.assertEqual(obj.last_name, "")
