@@ -23,3 +23,7 @@ class TestFileStorage(unittest.TestCase):
         self.assertEqual(FileStorage, type(FileStorage()))
     def test_B_classatrr(self):
         self.assertEqual(str, type(FileStorage._FileStorage__file_path))
+    def test_C_objects(self):
+        self.assertEqual(dict, type(FileStorage._FileStorage__objects))
+    def test_C_storage(self):
+        self.assertEqual(FileStorage, type(models.storage))
