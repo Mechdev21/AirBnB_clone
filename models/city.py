@@ -1,16 +1,15 @@
 #!/usr/bin/python3
 
+"""This modue imports from BaseModel"""
+
 from models.base_model import BaseModel
-"""
-This modue imports from BaseModel
-"""
 
 
 class City(BaseModel):
-    """Public class attributes"""
-    def __init__(self, state_id="", name=""):
-
-        """Calling BaseModel"""
-        super().__init__()
-        self.state_id = state_id
-        self.name = name
+    """Public class attributes
+    Attributes:
+        state_id: it would be the state.id
+        name: an empty string
+    """
+    state_id = ""
+    name = ""

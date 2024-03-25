@@ -1,31 +1,34 @@
 #!/usr/bin/python3
 
+"""Place test file"""
 from models.base_model import BaseModel
-
-"""
-Class Place inheriting from BaseModel
-"""
 
 
 class Place(BaseModel):
-    """creting public class atributes"""
+    
+    """Inherits from BaseModel class
 
-    def __init__(self, city_id="", user_id="",
-                 name="", description="", number_rooms=0,
-                 number_bathrooms=0,
-                 max_guest=0, price_by_night=0,
-                 latitude=0.0, longitude=0.0, amenity_ids=""):
-
-        """Calling the BaseModel"""
-        super().__init__()
-        self.city_id = city_id
-        self.user_id = user_id
-        self.name = name
-        self.description = description
-        self.number_rooms = number_rooms
-        self.number_bathrooms = number_bathrooms
-        self.max_guest = max_guest
-        self.price_by_night = price_by_night
-        self.latitude = latitude
-        self.longitude = longitude
-        self.amenity_ids = amenity_ids
+    Attributes:
+        city_id (str): City id
+        user_id (str): User id
+        name (str): name of the place.
+        description (str): description of the place
+        number_rooms (int): number of rooms of the place
+        number_bathrooms (int): number of bathrooms of the place
+        max_guest (int): maximum number of guests of the place
+        price_by_night (int): price by night of the place
+        latitude (float): latitude of the place
+        longitude (float): longitude of the place
+        amenity_ids (list): list of Amenity ids
+    """
+    city_id = ""
+    user_id = ""
+    name = ""
+    description = ""
+    number_rooms = 0
+    number_bathrooms = 0
+    max_guest = 0
+    price_by_night = 0
+    latitude = 0.0
+    longitude = 0.0
+    amenity_ids = []

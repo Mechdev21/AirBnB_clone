@@ -1,14 +1,21 @@
 #!/usr/bin/python3
+
 """ Creating the user class"""
+
 from models.base_model import BaseModel
 
 
 class User(BaseModel):
-    """Defines a user class model"""
-    def __init__(self,email = " ", password = " ", first_name = " ", last_name = " ", *args, **kwargs):
-        """class user constructor"""
-        super().__init__(*args, **kwargs)
-        self.email = email
-        self.password = password
-        self.first_name = first_name
-        self.last_name = last_name
+    """Defines a user class model
+    
+    Attributes:
+        email: empty string
+        password: empty string
+        first_name: empty string
+        last_name: empty string
+    """
+   
+    email = ""
+    password = ""
+    first_name = ""
+    last_name = ""
