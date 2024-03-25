@@ -6,6 +6,11 @@ import shlex
 from models.base_model import BaseModel
 from models.user import User
 from models import storage
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
 
 class HBNBCommand(cmd.Cmd):
@@ -17,7 +22,9 @@ class HBNBCommand(cmd.Cmd):
     def do_create(self, line):
 
         """Creates a new instance of a model"""
-        classes = {"BaseModel": BaseModel, "User": User}
+        classes = {"BaseModel": BaseModel, "User": User, "State": State,
+                   "City": City, "Amenity": Amenity, "Place": Place,
+                   "Review": Review}
         args = shlex.split(line)
         if len(args) == 0:
             print("** class name missing **")
@@ -33,7 +40,9 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, line):
         """Show details of a specific instance"""
-        classes = {"BaseModel": BaseModel, "User": User}
+        classes = {"BaseModel": BaseModel, "User": User, "State": State,
+                   "City": City, "Amenity": Amenity, "Place": Place,
+                   "Review": Review}
         args = shlex.split(line)
         instant = storage.all()
         if len(args) == 0:
@@ -51,7 +60,9 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, line):
         """Deletes an instance based on the class name and id"""
-        classes = {"BaseModel": BaseModel, "User": User}
+        classes = {"BaseModel": BaseModel, "User": User, "State": State,
+                   "City": City, "Amenity": Amenity, "Place": Place,
+                   "Review": Review}
         args = shlex.split(line)
         instant = storage.all()
         if len(args) == 0:
@@ -69,7 +80,9 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, line):
         """Prints all string representation of all instances based"""
-        classes = {"BaseModel": BaseModel, "User": User}
+        classes = {"BaseModel": BaseModel, "User": User, "State": State,
+                   "City": City, "Amenity": Amenity, "Place": Place,
+                   "Review": Review}
         args = shlex.split(line)
         instant = storage.all()
         if len(args) == 0:
@@ -84,7 +97,9 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, line):
         """Updates an instance based on the class name"""
-        classes = {"BaseModel": BaseModel, "User": User}
+        classes = {"BaseModel": BaseModel, "User": User, "State": State,
+                   "City": City, "Amenity": Amenity, "Place": Place,
+                   "Review": Review}
         args = shlex.split(line)
 
         if len(args) < 4:
