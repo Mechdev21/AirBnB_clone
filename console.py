@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """Begining of the console"""
 
 import cmd
@@ -79,7 +78,8 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         else:
             if len(args) == 1:
-                instances = [str(v) for v in instant.values() if v.__class__.__name__ == args[0]]
+                instances = [str(v) for v in instant.values()
+                             if v.__class__.__name__ == args[0]]
             print(instances)
 
     def do_update(self, line):
@@ -88,7 +88,6 @@ class HBNBCommand(cmd.Cmd):
         args = shlex.split(line)
 
         if len(args) < 4:
-            print("Usage: update <class name> <id> <attribute name> <attribute value>")
             return
 
         class_name = args[0]
