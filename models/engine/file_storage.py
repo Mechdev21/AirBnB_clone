@@ -3,6 +3,7 @@
 and deserialization"""
 
 import json
+import os
 from models.base_model import BaseModel
 from models.user import User
 from models.state import State
@@ -36,17 +37,18 @@ class FileStorage:
 
     def reload(self):
         """Deserialize a JSON file and convert it into instances"""
-        try:
-            with open(self.__file_path, 'r') as f:
-                instance_dict = json.load(f)
+        if os.path.exists(self.__file_path):
+            try:
+                with open(self.__file_path, 'r') as f:
+                    instance_dict = json.load(f)
 
-            for data in instance_dict.values():
-                class_key = data.get('__class__')
-                if class_key:
-                    class_name = globals().get(class_key)
-                    if class_name:
-                        obj = class_name(**data)
-                        self.new(obj)
-        except Exception:
-            pass
+                for data in instance_dict.values():
+                    class_key = data.get('__class__')
+                    if class_key:
+                        class_name = globals().get(class_key)
+                        if class_name:
+                            obj = class_name(**data)
+                            self.new(obj)
+            except Exception:
+                pass
 
