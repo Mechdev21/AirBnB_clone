@@ -28,15 +28,16 @@ class HBNBCommand(cmd.Cmd):
         args = shlex.split(line)
         if len(args) == 0:
             print("** class name missing **")
-        if len(args) == 1 and args[0] not in classes:
+        elif len(args) == 1 and args[0] not in classes:
             print("** class doesn't exist **")
-        try:
-            class_name = classes[args[0]]
-            obj = class_name()
-            obj.save()
-            print(obj.id)
-        except Exception as e:
-            print(f"Error creating object: {str(e)}")
+        else:
+            try:
+                class_name = classes[args[0]]
+                obj = class_name()
+                obj.save()
+                print(obj.id)
+            except Exception as e:
+                print(f"Error creating object: {str(e)}")
 
     def do_show(self, line):
         """Show details of a specific instance"""
