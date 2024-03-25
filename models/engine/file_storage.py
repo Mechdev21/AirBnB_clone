@@ -55,7 +55,4 @@ class FileStorage:
                         self.new(obj)
                     except Exception as e:
                         print("Error creating instance: {}".format(e))
-                        return None
-
-        return self.reload
 
