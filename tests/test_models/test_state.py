@@ -10,9 +10,5 @@ class TestState(unittest.TestCase):
     
     """ writing the test cases"""  
     def test_name(self):
-        """Testing for name values"""
-        pass
-    
-    
-if __name__ == "__main__":
-    unittest.main()
+        obj = State()
+        self.assertEqual(obj.name, "")

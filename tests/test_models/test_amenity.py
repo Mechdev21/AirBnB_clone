@@ -10,10 +10,5 @@ class TestAmenity(unittest.TestCase):
     """test cases to check for"""
     
     def test_name(self):
-        """test for amenity
-        """
+        
         pass
-    
-    
-if __name__ == "__main__":
-    unittest.main()
