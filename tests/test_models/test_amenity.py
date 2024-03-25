@@ -10,5 +10,5 @@ class TestAmenity(unittest.TestCase):
     """test cases to check for"""
     
     def test_name(self):
-        
-        pass
+        obj = Amenity()
+        self.assertEqual(obj.name, "")
