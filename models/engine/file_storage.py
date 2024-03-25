@@ -42,12 +42,12 @@ class FileStorage:
                 with open(self.__file_path, 'r') as f:
                     instance_dict = json.load(f)
 
-                for data in instance_dict.values():
+                for key, data in instance_dict.items():
                     class_key = data.get('__class__')
                     if class_key:
                         class_name = globals().get(class_key)
                         if class_name:
                             obj = class_name(**data)
-                            self.new(obj)
+                            self.__objects[key] = obj
             except Exception:
                 pass
