@@ -2,6 +2,7 @@
 """Begining of the console"""
 
 import cmd
+import os
 import shlex
 from models.base_model import BaseModel
 from models.user import User
@@ -32,6 +33,9 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         else:
             try:
+                if not os.path.exists("file.json"):
+                    with open("file.json", "w") as f:
+                        json.dump({}, f)
                 class_name = classes[args[0]]
                 obj = class_name()
                 obj.save()
