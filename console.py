@@ -82,6 +82,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
             else:
                 del instant[key]
+                storage.save()
 
     def do_all(self, line):
         """Prints all string representation of all instances based"""
@@ -99,6 +100,36 @@ class HBNBCommand(cmd.Cmd):
                 instances = [str(v) for v in instant.values()
                              if v.__class__.__name__ == args[0]]
             print(instances)
+
+    def do_update(self, line):
+        """Updates the class provided with thehelp of the id"""
+        classes = {"BaseModel": BaseModel, "User": User, "State": State,
+                   "City": City, "Amenity": Amenity, "Place": Place,
+                   "Review": Review}
+        args = shlex.split(line)
+
+        if len(args) == 0:
+            print("** class name missing **")
+        elif len(args) < 2 and args[0] not in classes:
+            print("** class doesn't exist **")
+        elif len(args) < 2 and args[0] in classes:
+            print("** instance id missing **")
+        else:
+            key = f"{classes[args[0]].__name__}.{args[1]}"
+            dic = storage.all()
+            if key not in dic:
+                print("** no instance found **")
+            elif len(args) < 3:
+                print("** attribute name missing **")
+            elif len(args) < 4:
+                print("** value missing **")
+            else:
+                attr_k = args[2]
+                attr_v = args[3]
+                instant = dic[key]
+                setattr(instant, attr_k, attr_v)
+                storage.save()
+
 
     def do_quit(self, line):
         """EXIT the cmdloop"""
