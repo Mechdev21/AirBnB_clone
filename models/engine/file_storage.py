@@ -39,20 +39,14 @@ class FileStorage:
         try:
             with open(self.__file_path, 'r') as f:
                 instance_dict = json.load(f)
-        except FileNotFoundError:
-            pass
-        except json.JSONDecodeError as e:
-            print("Error decoding JSON: {}".format(e))
-            return None
 
-        for data in instance_dict.values():
-            class_key = data.get('__class__')
-            if class_key:
-                class_name = globals().get(class_key)
-                if class_name:
-                    try:
+            for data in instance_dict.values():
+                class_key = data.get('__class__')
+                if class_key:
+                    class_name = globals().get(class_key)
+                    if class_name:
                         obj = class_name(**data)
                         self.new(obj)
-                    except Exception as e:
-                        print("Error creating instance: {}".format(e))
+        except Exception:
+            pass
 
