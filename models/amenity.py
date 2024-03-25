@@ -9,10 +9,9 @@ Model
 
 
 class Amenity(BaseModel):
+    """public class attribute
     
-    """Public class attribute
     Attribute:
         name: has an empty string
-    
     """
     name = ""
