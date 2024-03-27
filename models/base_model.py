@@ -1,17 +1,17 @@
 #!/usr/bin/python3
 
-import uuid
-from datetime import datetime
-import models
-
 """
 This is the beginginof the class baseModel
 """
 
+import uuid
+from datetime import datetime
+import models
+
 
 class BaseModel:
 
-    '''
+    """
     Creating a public attribute of Basemodel
 
     Attributes:
@@ -24,7 +24,7 @@ class BaseModel:
         *args: Gets's a number of undisclosed arguments
         **kwargs: passes variable-length argument
         dictionary to a function
-    '''
+    """
 
     def __init__(self, *args, **kwargs):
         """Create BaseModel from dictionary"""
