@@ -25,7 +25,7 @@
     opacity: 90%;
 }
 
-.location .amenities{
+.locations .amenities{
     height: 100%;
     width: 25%;
     display: inline-block;
@@ -35,7 +35,7 @@
     position: relative;
 }
 
-.location{
+.locations{
     border-right: 1px solid #DDDDDD;
 }
 
@@ -50,4 +50,58 @@
     font-size: 14px;
     margin:2px 20px;
     top: 15%;
+}
+
+.locations > h3, .amenities > h3 {
+    font-weight: 600;
+    margin: 12px 0 5px 0;
+}
+
+.locations > h4, .amenities > h4 {
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0 0 5px 0;
+}
+
+.popover {
+    display: none;
+    position: relative;
+    background-color: #FAFAFA;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    width: 100%;
+    left: -30px;
+    padding: 10px, 30px 40px 0;
+    margin-top: 16px;
+    z-index: 1;
+}
+
+.popover, .popover ul {
+    list-style-type: none;
+}
+
+.locations:hover > .popover {
+    display: block;
+}
+
+.amenities:hover > .popover {
+    display: block;
+}
+
+.popover h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.locations > .popover > li {
+    margin-bottom: 30px;
+    margin-left: 30px;
+}
+
+.locations > .popover > li > ul {
+    padding-left: 20px;
+}
+
+.amenities > .popover > li {
+    margin-left:50px;
+    margin-bottom: 10px;
 }
