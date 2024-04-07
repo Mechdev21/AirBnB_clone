@@ -1,0 +1,77 @@
+/*Css styles for task 9*/
+/*Amenities styling*/
+.amenities,
+.reviews {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.amenities h2,
+.reviews h2 {
+    font-size: 16px;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+/*List styling for amenities*/
+.amenities ul {
+list-style: none;
+padding: 0;
+}
+
+.amenities li {
+    margin-bottom: 10px;
+}
+
+.amenities li span {
+    display: inline-block;
+  padding: 5px 10px;
+}
+.reviews ul {
+    padding-left: 0;
+}
+
+.amenities li {
+    list-style: none;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* margin-left: 20px; */
+}
+
+.reviews li {
+    list-style: none;
+}
+
+/*Background images (icon)*/
+.list1,
+.list2,
+.list3 {
+    background-image: url(images/icon.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+    height: 20px;
+    /* width: 100px; */
+    display: inline-block;
+}
+
+/* Now the images*/
+.list1 {
+    background-image: url(images/icon_tv.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+    height: 20px;
+    width: 100px;
+}
+/*Reviewers name h3*/
+.reviews h3 {
+    font-size: 14px;
+    margin: 5px auto;
+}
+
+.reviews p {
+    font-size: 12px;
+    margin-top: 5px;
+}

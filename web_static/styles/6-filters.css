@@ -1,107 +1,102 @@
-.filters {
-    color: white;
+/*The box contaning the search button*/
+.container .filters {
+    background-color: white;
     height: 70px;
     width: 100%;
     border: 1px solid #DDDDDD;
     border-radius: 4px;
-    position: absolute;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    
 }
-
-.filters button{
+/*Button Search*/
+.container .filters button {
     font-size: 18px;
     background-color: #FF5A5F;
     color: #FFFFFF;
-    height: 48px;
+    height:48px;
     width: 20%;
-    border: 0;
+    border: none;
+    margin-left: auto;
     border-radius: 4px;
-    align-content: center;
-    right: 30px;
-    top: 15px;
-    position: absolute;
+    margin-right: 30px;
+
 }
 
-.filters button:hover{
+/*Button hover*/
+.filters button:hover {
     opacity: 90%;
 }
 
-.locations .amenities{
+/*Location and Amenities*/
+.filters .locations,
+.filters .amenities {
     height: 100%;
     width: 25%;
-    display: inline-block;
-    top: 0%;
-    justify-content: center;
-    flex-direction: column;
+    /* display: inline-block; */
     position: relative;
 }
-
-.locations{
+/*Location for the border at left*/
+.filters .locations {
     border-right: 1px solid #DDDDDD;
 }
 
-.filters h3{
+/*Heading tags h3*/
+.filters h3 {
     font-weight: 600;
-    margin: 2px 20px;
-    top: 15%;
+    padding-top: 10px;
+    padding-left: 30px;
+    line-height: 0px;
 }
 
-.filters h4{
+/*h4 heading*/
+.filters h4 {
     font-weight: 400;
     font-size: 14px;
-    margin:2px 20px;
-    top: 15%;
+    line-height: 0px;
+    padding-left: 30px;
+    padding-bottom: 5px;
 }
 
-.locations > h3, .amenities > h3 {
-    font-weight: 600;
-    margin: 12px 0 5px 0;
-}
 
-.locations > h4, .amenities > h4 {
-    font-weight: 400;
-    font-size: 14px;
-    margin: 0 0 5px 0;
-}
-
-.popover {
-    display: none;
-    position: relative;
+/*Filter 6 begins*/
+.filters .popover {
     background-color: #FAFAFA;
     border: 1px solid #DDDDDD;
     border-radius: 4px;
-    width: 100%;
-    left: -30px;
-    padding: 10px, 30px 40px 0;
-    margin-top: 16px;
-    z-index: 1;
+    list-style: none;
+    display: none;
+    position: absolute;
+    width: 95%;
 }
 
-.popover, .popover ul {
-    list-style-type: none;
-}
-
-.locations:hover > .popover {
+/*Hover to display the menu*/
+.filters .locations:hover .popover,
+.filters .amenities:hover .popover {
     display: block;
 }
 
-.amenities:hover > .popover {
-    display: block;
+
+/*Pading th e list of locations*/
+.filters .locations .popover ul {
+    padding: 6px 6px 0;
 }
 
-.popover h2 {
-    margin-top: 0;
-    margin-bottom: 5px;
-}
-.locations > .popover > li {
-    margin-bottom: 30px;
-    margin-left: 30px;
+.filters .locations li {
+    margin: 0 auto 6px 3em;
 }
 
-.locations > .popover > li > ul {
-    padding-left: 20px;
+/* Amenities margin */
+.filters .amenities li {
+    margin: 12px auto 12px 30px;
 }
 
-.amenities > .popover > li {
-    margin-left:50px;
-    margin-bottom: 10px;
-}
+/* Header 2 style */
+.filters h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 12px auto 0 30px;
+    padding-top: 15px;
+    line-height: 0px;
+  }
