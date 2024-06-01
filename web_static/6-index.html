@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <!--Head section starts here-->
+    <head>
+        <title>
+            Html that displays a header and a footer by using CSS files
+        </title>
+
+        <!--Importing stylesheets-->
+        <link rel="stylesheet" href="styles/4-common.css">
+        <link rel="stylesheet" href="styles/3-footer.css">
+        <link rel="stylesheet" href="styles/3-header.css">
+        <link rel="stylesheet" href="styles/4-filters.css">
+        <link rel="stylesheet" href="styles/5-filters.css">
+        <link rel="stylesheet" href="styles/6-filters.css">
+
+        <!--Adding an icon for the webpage-->
+        <link rel="icon" type="icon/png" href="../images/icon.png">
+    </head>
+
+    <!--Body ection starts here-->
+    <body>
+
+        <!--Header palcement-->
+        <header>
+            <div class="logo"> </div>
+        </header>
+
+        <!-- Container-->
+        <div class="container">
+            <section class="filters">
+
+                <!-- Creating location and amenities filters -->
+                <div class="locations">
+                    <h3>
+                        States
+                    <H4>
+                        Benue, Lagos...
+                    </H4>
+
+                    <!--  Locations and Amenities filters to display a contextual dropdown  -->
+                    <ul class="popover">
+                        <li>
+                            <h2>Benue:</h2>
+
+                            <ul class="cities">
+                                <li>Gboko</li>
+                                <li>Markurdi</li>
+                                <li>Otupko</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h2>Lagos:</h2>
+                            <ul class="cities">
+                                <li>Victoria Island</li>
+                                <li>Lekki</li>
+                                <li>Ikeja</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- amenities -->
+                <div class="amenities">
+
+                    <h3>
+                        Amenities
+                    </h3>
+                    <H4>
+                        Internet, Kitchen...
+                    </H4>
+                    <ul class="popover">
+                        <li>Television</li>
+                        <li>WIFI Set</li>
+                        <li>Toppings</li>
+                    </ul>
+                </div>
+
+                <!-- Search button -->
+                <button>Search</button>
+            </section>
+        </div>
+    
+        <!--Footer starts here-->
+        <footer>
+            <p> Best School </p>
+        </footer>
+    </body>
+</html>
