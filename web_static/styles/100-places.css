@@ -1,0 +1,76 @@
+.places .amenities,
+.places .reviews {
+    margin-top: 40px;
+    width: 100%;
+    height: inherit;
+}
+
+.places .amenities ul {
+    align-items: left;
+    justify-content: left;
+    padding: 0px;
+}
+
+.places .amenities ul li{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+    margin-bottom: 10px;
+    align-items: end;
+    list-style: none;
+    text-indent: 10px;
+    }
+
+.places .amenities h2 {
+    font-size: 16px;
+    border-bottom: 1px solid #DDDDDD;
+    text-align: left;
+    padding-bottom: 5px;
+}
+
+/* Adding icons for amenities */
+.pet_icon {
+    background: url(../images/icon_pets.png);
+}
+
+.tv_icon {
+    background-image: url(../images/icon_tv.png);
+}
+
+.wifi_icon {
+    background-image: url(../images/icon_wifi.png);
+} 
+
+  .pet_icon, 
+  .tv_icon,
+  .wifi_icon {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+  }
+/* adding icon stops here */
+
+.reviews h2{
+    font-size: 16px;
+    border-bottom: 1px solid #DDDDDD;
+    text-align: left;
+    padding-bottom: 5px;
+}
+
+.reviews ul {
+    list-style: none;
+    padding: 0;
+}
+
+.reviews ul h3 {
+    font-size: 13px;
+    text-align: left;
+}
+
+.reviews p {
+    font-size: 12px;
+    margin-top: -10px;
+}
