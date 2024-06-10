@@ -1,49 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <title>HTML page that displays a header 
-        and a footer by using CSS files</title>
+    <!--Head section starts here-->
+    <head>
+        <title>
+            Html that displays a header and a footer by using CSS files
+        </title>
 
-        <link rel="stylesheet" href="4-common.css">
-        <link rel="stylesheet" href="3-header.css">
-        <link rel="stylesheet" href="3-footer.css">
-        <link rel="stylesheet" href="5-filters.css">
+        <!--Importing stylesheets-->
+        <link rel="stylesheet" href="styles/4-common.css">
+        <link rel="stylesheet" href="styles/3-footer.css">
+        <link rel="stylesheet" href="styles/3-header.css">
+        <link rel="stylesheet" href="styles/4-filters.css">
+        <link rel="stylesheet" href="styles/5-filters.css">
 
-        <!--adding an icon-->
-        <link rel="icon" type="image/png" href="images/icon.png">
-</head>
+        <!--Adding an icon for the webpage-->
+        <link rel="icon" type="icon/png" href="../images/icon.png">
+    </head>
 
-<!--The body starts here-->
-<body>
+    <!--Body ection starts here-->
+    <body>
 
-    <!--The header section starts here-->
-    <header>
+        <!--Header palcement-->
+        <header>
+            <div class="logo"> </div>
+        </header>
 
-        <div class="logo"></div>
+        <!-- Container-->
+        <div class="container">
+            <section class="filters">
 
-    </header>
+                <!-- Creating location and amenities filters -->
+                <div class="locations">
+                    <h3>
+                        States
+                    </h3>
+                    <H4>
+                        Benue, Lagos, ...
+                    </H4>
+                </div>
 
-    <div class="container">
-        <section class="filters">
-            <button>Search</button>
+                <!-- amenities -->
+                <div class="amenities">
 
-            <div class="locations">
-                <h3>States</h3>
-                <h4>California, Arizona</h4>
-            </div>
+                    <h3>
+                        Amenities
+                    </h3>
+                    <H4>
+                        Internet, Kitchen, ...
+                    </H4>
 
-            <div class="amenities">
-                <h3>Amenities</h3>
-                <h4>Kitchen, Chair</h4>
-            </div>
+                </div>
 
-        </section>
-    </div>
-
-    <!--The footer section starts here-->
-    <footer>
-        <p>Best School</p>
-    </footer>
-</body>
+                <!-- Search button -->
+                <button>Search</button>
+            </section>
+        </div>
+    
+        <!--Footer starts here-->
+        <footer>
+            <p> Best School </p>
+        </footer>
+    </body>
 </html>
